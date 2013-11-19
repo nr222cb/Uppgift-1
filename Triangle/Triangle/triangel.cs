@@ -14,8 +14,13 @@ public struct Point {
 public class Triangle {
   double[] sides;
 
-  public Triangle(double a, double b, double c) {
-    sides = new double[] { a, b, c };
+  public Triangle(double a, double b, double c)
+  {
+      if ((a <= 0) || (b <= 0) || (c <= 0))
+      {
+          throw new ArgumentOutOfRangeException("Cannot use a value less or equal to 0 as a side in a triangle");
+      }
+      sides = new double[] { a, b, c };
   } 
 
   public Triangle(double[] s) {
@@ -43,13 +48,13 @@ public class Triangle {
   }
 
   public bool isScalene() {
-    if(uniqueSides()==1)
+    if(uniqueSides()==3)
       return true;
     return false;
   }
 
   public bool isEquilateral() {
-    if(uniqueSides()==3)
+    if(uniqueSides()==1)
       return true;
     return false;
   }

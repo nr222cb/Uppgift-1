@@ -16,14 +16,14 @@ namespace UnitTestProject1
         [TestMethod]
         public void isScaleneTest()
         {
-            Triangle tri = new Triangle(1.2, 0, 1.3);
+            Triangle tri = new Triangle(1.2, 20, 1.3);
             Assert.IsTrue(tri.isScalene());
         }
 
         [TestMethod]
         public void isEquilateralTest()
         {
-            Triangle tri = new Triangle(0, 0, 0);
+            Triangle tri = new Triangle(1, 1, 1);
             Assert.IsTrue(tri.isEquilateral());
         }
     }

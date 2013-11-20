@@ -20,6 +20,11 @@ public class Triangle {
       {
           throw new ArgumentOutOfRangeException("Cannot use a value less or equal to 0 as a side in a triangle");
       }
+
+      if ((a + b <= c) || (a + c <= b) || (b + c <= a))
+      {
+          throw new ArgumentOutOfRangeException("Not a valid triangle");
+      }
       sides = new double[] { a, b, c };
   } 
 
